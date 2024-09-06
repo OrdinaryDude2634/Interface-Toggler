@@ -1,0 +1,13 @@
+{
+  "name": "interface-toggler",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A simple application to toggle internet interfaces",
+  "main": "index.js",
+  "author": "OrdinaryDude2634",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@inquirer/prompts": "^5.3.8",
+    "chalk": "^5.3.0"
+  }
+}
