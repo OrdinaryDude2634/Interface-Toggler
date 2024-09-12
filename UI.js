@@ -6,6 +6,7 @@ export class UI {
     static changeDelay() {
         return number({
             message: 'Enter the delay in milliseconds',
+            required: true,
             min: 4000
         });
     }
