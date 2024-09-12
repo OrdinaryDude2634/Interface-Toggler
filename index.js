@@ -1,14 +1,14 @@
 import chalk from 'chalk';
 import { interfaceManager } from './interfaceManager.js';
 import { UI } from './UI.js';
-import { sleep, isAdmin } from './utils.js';
+import { sleep, checkAdmin } from './utils.js';
 import { taskScheduler } from './taskScheduler.js';
 
 
 
 console.clear();
 console.log(chalk.blue('Checking if the application is running as an administrator...'));
-await isAdmin();
+await checkAdmin();
 console.clear();
 
 
@@ -22,6 +22,9 @@ while (true) {
     switch (interfaceName) {
         case 'delay':
             TS.delay = await UI.changeDelay();
+            if (!TS.delay) {
+                TS.delay = 10000;
+            }
             continue; 
         case 'exit':
             process.exit();
