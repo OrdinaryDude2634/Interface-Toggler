@@ -23,7 +23,7 @@ export class UI {
         return select({
             message: 'Select the interface you want to manage',
             choices: [...interfaceChoices, new Separator(), {
-                name: 'Change task scheduler delay (10s default)',
+                name: 'Change Task Scheduler Delay (10 Seconds Default)',
                 value: 'delay'
             },
             {
@@ -46,18 +46,18 @@ export class UI {
                     value: 'disable'
                 },
                 {
-                    name: 'Enable later',
+                    name: 'Enable Later',
                     value: 'enablelater',
                     description: 'Schedule a task to enable the interface later'
                 },
                 {
-                    name: 'Disable later',
+                    name: 'Disable Later',
                     value: 'disablelater',
                     description: 'Schedule a task to disable the interface later'
                 },
                 new Separator(),
                 {
-                    name: 'Go back and cancel all scheduled tasks',
+                    name: 'Go Back and Cancel All Scheduled Tasks',
                     value: 'back'   
                 }
             ]
