@@ -7,7 +7,7 @@ export function sleep(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
 
-export async function isAdmin() {
+export async function checkAdmin() {
     try {
         execSync(`net session`, {windowsHide: true, stdio: ['ignore', 'ignore', 'pipe']});
     } catch (e) {
