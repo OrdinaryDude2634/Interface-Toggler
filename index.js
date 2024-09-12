@@ -22,9 +22,8 @@ while (true) {
     switch (interfaceName) {
         case 'delay':
             TS.delay = await UI.changeDelay();
-            if (!TS.delay) {
-                TS.delay = 10000;
-            }
+            console.log(chalk.green(`Task scheduler delay changed to ${TS.delay} milliseconds`));
+            await sleep(2000);
             continue; 
         case 'exit':
             process.exit();
