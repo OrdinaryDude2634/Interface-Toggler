@@ -1,4 +1,4 @@
-import { select, number, Separator } from "@inquirer/prompts";
+import { select, number, Separator } from '@inquirer/prompts';
 
 
 
