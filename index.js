@@ -1,8 +1,8 @@
 import chalk from 'chalk';
-import { interfaceManager } from './interfaceManager.js';
+import { InterfaceManager } from './InterfaceManager.js';
 import { UI } from './UI.js';
 import { sleep, checkAdmin } from './utils.js';
-import { taskScheduler } from './taskScheduler.js';
+import { TaskScheduler } from './TaskScheduler.js';
 
 
 
@@ -12,12 +12,12 @@ await checkAdmin();
 console.clear();
 
 
-let TS = new taskScheduler(10000);
+let TS = new TaskScheduler(10000);
 
 
 while (true) {
     console.clear();
-    let interfaceName = await UI.chooseInterface(interfaceManager.getAvailableInterfaces());
+    let interfaceName = await UI.chooseInterface(InterfaceManager.getAvailableInterfaces());
 
     switch (interfaceName) {
         case 'delay':
@@ -37,7 +37,7 @@ while (true) {
         switch (choice) {
             case 'enable':
                 console.log(chalk.yellow(`Enabling "${interfaceName}"`));
-                let enableResult = interfaceManager.enableInterface(interfaceName);  
+                let enableResult = InterfaceManager.enableInterface(interfaceName);  
                 if (enableResult !== true) {
                     console.log(chalk.red(`Failed to enable ${interfaceName}\n${enableResult}`));
                     await sleep(2500);
@@ -49,7 +49,7 @@ while (true) {
 
             case 'disable':
                 console.log(chalk.yellow(`Disabling "${interfaceName}"`));
-                let disableResult = interfaceManager.disableInterface(interfaceName);  
+                let disableResult = InterfaceManager.disableInterface(interfaceName);  
                 if (disableResult !== true) {
                     console.log(chalk.red(`Failed to disable ${interfaceName}\n${disableResult}`));
                     await sleep(2500);
