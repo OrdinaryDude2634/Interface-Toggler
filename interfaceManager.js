@@ -3,7 +3,7 @@ import { execSync } from 'child_process';
 
 
 
-export class interfaceManager {
+export class InterfaceManager {
     static getAvailableInterfaces() {
         let result = [];
         for (let property in os.networkInterfaces()) {
