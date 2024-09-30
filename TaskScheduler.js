@@ -1,4 +1,4 @@
-import { interfaceManager } from "./interfaceManager.js";
+import { InterfaceManager } from './InterfaceManager.js';
 
 
 
@@ -10,14 +10,14 @@ export class TaskScheduler {
 
     enableInterfaceLater(interfaceName) {
         let timerId = setTimeout(() => {
-            interfaceManager.enableInterface(interfaceName);
+            InterfaceManager.enableInterface(interfaceName);
         }, this.delay);
         this.scheduledTasks.push(timerId);
     }
 
     disableInterfaceLater(interfaceName) {
         let timerId = setTimeout(() => {
-            interfaceManager.disableInterface(interfaceName);
+            InterfaceManager.disableInterface(interfaceName);
         }, this.delay);
         this.scheduledTasks.push(timerId);
     }
