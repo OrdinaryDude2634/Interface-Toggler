@@ -2,7 +2,7 @@ import { interfaceManager } from "./interfaceManager.js";
 
 
 
-export class taskScheduler {
+export class TaskScheduler {
     constructor(delay) {
         this.scheduledTasks = [];
         this.delay = delay;
